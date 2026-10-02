@@ -49,7 +49,7 @@ export default function Hero() {
   };
   const { scrollYProgress } = useScroll({target:ref,offset:["start start","end start"]});
   const imageY = useTransform(scrollYProgress,[0,1],[0,mobile ? 32 : 100]);
-  const imageScale = useTransform(scrollYProgress,[0,1],[1,mobile ? 1.04 : 1.18]);
+  const imageScale = useTransform(scrollYProgress,[0,1],[1,mobile ? 1 : 1.18]);
   const textY = useTransform(scrollYProgress,[0,1],[0,-64]);
   const textOpacity = useTransform(scrollYProgress,[0,.85],[1,0]);
   return (
@@ -73,7 +73,7 @@ export default function Hero() {
         </div>
       </motion.div>
       <div className="hero-film-caption"><span className="eyebrow">{t.loader}</span><span>{lang === "es" ? "Tu lugar en la isla." : "Your place on the island."}</span></div>
-      <button data-hero-video-toggle="" onClick={toggleVideo} aria-pressed={playing} className="hero-video-toggle"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={playing ? "M7 5h3v14H7zm7 0h3v14h-3z" : "m8 5 11 7-11 7z"} /></svg><span>{playing ? (lang === "es" ? "Pausar video" : "Pause video") : (lang === "es" ? "Reproducir video" : "Play video")}</span></button>
+      <button data-hero-video-toggle="" onClick={toggleVideo} aria-label={playing ? (lang === "es" ? "Pausar video" : "Pause video") : (lang === "es" ? "Reproducir video" : "Play video")} aria-pressed={playing} className="hero-video-toggle"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={playing ? "M7 5h3v14H7zm7 0h3v14h-3z" : "m8 5 11 7-11 7z"} /></svg><span>{playing ? (lang === "es" ? "Pausar video" : "Pause video") : (lang === "es" ? "Reproducir video" : "Play video")}</span></button>
       <div className="hero-baseline"><div className="hero-hours"><OpeningStatus /><button onClick={() => scrollToId("visit")} className="eyebrow">{lang === "es" ? "Ver horario" : "View hours"}<span aria-hidden="true">↓</span></button></div><span className="eyebrow hero-week">{lang === "es" ? "Lun–Dom · 7 días a la semana" : "Mon–Sun · 7 days a week"}</span></div>
     </section>
   );
