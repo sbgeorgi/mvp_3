@@ -744,7 +744,7 @@ html.lenis,html.lenis body { height:auto; }
 @keyframes contact-ring { to { transform:scale(1.5); opacity:0; } }
 @media (max-width:1199px) { .hero-film-caption { display:none; } .hero-fullscreen .hero-baseline { padding-right:var(--page-gutter); } .hero-week { margin-right:70px; font-size:8px; } }
 @media (max-width:899px) {
-  .hero-fullscreen { min-height:max(740px,100svh); }
+  .hero-fullscreen { min-height:100svh; min-height:100dvh; }
   .hero-fullscreen > .hero-photo-shade { background:linear-gradient(90deg,#0a0a0ac7,#0a0a0a55),linear-gradient(0deg,#0a0a0af0,transparent 65%); }
   .hero-fullscreen .hero-copy { width:min(100%,680px); padding-top:76px; padding-bottom:126px; }
   .hero-video-toggle { top:100px; font-size:9px; }
@@ -758,15 +758,18 @@ html.lenis,html.lenis body { height:auto; }
   .floating-contact { right:calc(20px + env(safe-area-inset-right,0px)); bottom:calc(20px + env(safe-area-inset-bottom,0px)); width:60px; height:60px; min-height:60px; padding:6px; gap:0; z-index:45; }
   .floating-contact > .floating-contact-icon { width:48px; height:48px; }
   .floating-contact-icon::after { display:none; }
-  .hero-fullscreen .hero-visual video { object-position:60% center; }
+  .hero-fullscreen .hero-visual video { object-position:50% 50%; }
 }
 @media (max-width:599px) {
-  .hero-fullscreen { min-height:max(760px,100svh); padding-top:74px; }
-  .hero-fullscreen .hero-copy { padding-top:84px; padding-bottom:140px; }
+  .hero-fullscreen { min-height:100svh; min-height:100dvh; padding-top:74px; }
+  .hero-fullscreen .hero-copy { padding-top:70px; padding-bottom:116px; }
   .hero-fullscreen .hero-title { font-size:clamp(66px,16vw,90px); margin-top:24px; }
   .hero-fullscreen .hero-description { font-size:13px; line-height:1.8; max-width:350px; }
   .hero-fullscreen .hero-note { font-size:26px; }
   .hero-fullscreen .hero-proof { margin-top:28px; }
+  .hero-fullscreen .hero-actions { flex-wrap:nowrap; gap:12px; }
+  .hero-fullscreen .hero-actions .button { padding-inline:12px; gap:10px; flex:1; }
+  .hero-fullscreen .hero-actions .text-link { font-size:8px; gap:8px; white-space:nowrap; }
   .hero-fullscreen .hero-baseline { height:104px; }
   .hero-hours { flex-direction:column; align-items:flex-start; gap:6px; }
   .hero-hours .open-status { font-size:11px; }
@@ -781,6 +784,27 @@ html.lenis,html.lenis body { height:auto; }
   .floating-contact { padding:6px; }
   .floating-contact > .floating-contact-icon { width:48px; height:48px; }
   .hours-list li { font-size:11px; gap:10px; padding-inline:10px; }
+}
+/* Keep the video frame and overlay within shorter phone viewports. */
+@media (max-width:599px) and (max-height:740px) {
+  .hero-fullscreen .hero-copy { padding-top:64px; padding-bottom:100px; }
+  .hero-fullscreen .hero-title { font-size:clamp(52px,15vw,64px); margin:18px 0 14px; }
+  .hero-fullscreen .hero-note { font-size:22px; margin-bottom:12px; }
+  .hero-fullscreen .hero-description { font-size:12px; line-height:1.7; }
+  .hero-fullscreen .hero-actions { margin-top:18px; }
+  .hero-fullscreen .hero-actions .button { min-height:44px; padding:12px 10px; font-size:8px; gap:8px; }
+  .hero-fullscreen .hero-actions .text-link { min-height:44px; }
+  .hero-fullscreen .hero-proof { margin-top:18px; padding-top:12px; }
+  .hero-fullscreen .hero-rating { font-size:32px; }
+  .hero-fullscreen .hero-baseline { height:84px; }
+  .hero-video-toggle { top:86px; }
+}
+@media (max-width:599px) and (max-height:620px) {
+  .hero-fullscreen .hero-copy { padding-top:60px; padding-bottom:90px; }
+  .hero-fullscreen .hero-title { font-size:46px; margin:16px 0 10px; }
+  .hero-fullscreen .hero-note { font-size:20px; margin-bottom:10px; }
+  .hero-fullscreen .hero-actions { margin-top:14px; }
+  .hero-fullscreen .hero-proof { margin-top:12px; padding-top:10px; }
 }
 .reviews-viewport { position:relative; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x mandatory; overscroll-behavior-x:contain; scrollbar-width:thin; scrollbar-color:var(--color-gold) var(--line-dark); cursor:grab; padding-bottom:22px; touch-action:auto; }
 .reviews-viewport:focus-visible { outline:2px solid var(--color-gold); outline-offset:6px; }

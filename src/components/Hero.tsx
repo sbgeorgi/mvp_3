@@ -13,6 +13,14 @@ export default function Hero() {
   const video = useRef<HTMLVideoElement>(null);
   const manualPause = useRef(false);
   const [playing, setPlaying] = useState(false);
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const screen = matchMedia("(max-width:899px)");
+    const update = () => setMobile(screen.matches);
+    update();
+    screen.addEventListener("change", update);
+    return () => screen.removeEventListener("change", update);
+  }, []);
   useEffect(() => {
     const node = video.current;
     if (!node) return;
@@ -40,8 +48,8 @@ export default function Hero() {
     try { await node.play(); } catch { /* Keep the poster and play control if autoplay is unavailable. */ }
   };
   const { scrollYProgress } = useScroll({target:ref,offset:["start start","end start"]});
-  const imageY = useTransform(scrollYProgress,[0,1],[0,100]);
-  const imageScale = useTransform(scrollYProgress,[0,1],[1,1.18]);
+  const imageY = useTransform(scrollYProgress,[0,1],[0,mobile ? 32 : 100]);
+  const imageScale = useTransform(scrollYProgress,[0,1],[1,mobile ? 1.04 : 1.18]);
   const textY = useTransform(scrollYProgress,[0,1],[0,-64]);
   const textOpacity = useTransform(scrollYProgress,[0,.85],[1,0]);
   return (
