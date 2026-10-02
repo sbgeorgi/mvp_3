@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Adrians Gym triangular A mark</title>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ebd19b"/>
+      <stop offset=".45" stop-color="#c5a568"/>
+      <stop offset="1" stop-color="#95763e"/>
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="62" fill="#173d2d" stroke="#b99b60" stroke-width="1.2"/>
+  <g fill="url(#gold)">
+    <path d="M65 19 108 103H91L57 37Z"/>
+    <path d="M50 46H65L38 94H59L65 82 74 103H19Z"/>
+  </g>
+</svg>

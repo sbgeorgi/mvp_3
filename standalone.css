@@ -1,0 +1,5 @@
+/* Readable HTML export: progressive reveals and native interactive states. */
+[hidden] { display: none !important; }
+.site-reveal { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
+.site-reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .site-reveal { opacity: 1; transform: none; transition: none; } }

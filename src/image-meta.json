@@ -1,0 +1,280 @@
+{
+  "real-bench.jpg": {
+    "file": "real-bench-720.webp",
+    "width": 720,
+    "height": 1280,
+    "variants": [
+      {
+        "file": "real-bench-480.webp",
+        "width": 480
+      },
+      {
+        "file": "real-bench-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "real-cardio.jpg": {
+    "file": "real-cardio-1080.webp",
+    "width": 1080,
+    "height": 1920,
+    "variants": [
+      {
+        "file": "real-cardio-480.webp",
+        "width": 480
+      },
+      {
+        "file": "real-cardio-800.webp",
+        "width": 800
+      },
+      {
+        "file": "real-cardio-1080.webp",
+        "width": 1080
+      }
+    ]
+  },
+  "real-coaching.jpg": {
+    "file": "real-coaching-720.webp",
+    "width": 720,
+    "height": 1280,
+    "variants": [
+      {
+        "file": "real-coaching-480.webp",
+        "width": 480
+      },
+      {
+        "file": "real-coaching-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "real-gym-floor-detail.jpg": {
+    "file": "real-gym-floor-detail-1080.webp",
+    "width": 1080,
+    "height": 1920,
+    "variants": [
+      {
+        "file": "real-gym-floor-detail-480.webp",
+        "width": 480
+      },
+      {
+        "file": "real-gym-floor-detail-800.webp",
+        "width": 800
+      },
+      {
+        "file": "real-gym-floor-detail-1080.webp",
+        "width": 1080
+      }
+    ]
+  },
+  "real-gym-floor.jpg": {
+    "file": "real-gym-floor-1080.webp",
+    "width": 1080,
+    "height": 1920,
+    "variants": [
+      {
+        "file": "real-gym-floor-480.webp",
+        "width": 480
+      },
+      {
+        "file": "real-gym-floor-800.webp",
+        "width": 800
+      },
+      {
+        "file": "real-gym-floor-1080.webp",
+        "width": 1080
+      }
+    ]
+  },
+  "real-gym-machines.jpg": {
+    "file": "real-gym-machines-1080.webp",
+    "width": 1080,
+    "height": 1920,
+    "variants": [
+      {
+        "file": "real-gym-machines-480.webp",
+        "width": 480
+      },
+      {
+        "file": "real-gym-machines-800.webp",
+        "width": 800
+      },
+      {
+        "file": "real-gym-machines-1080.webp",
+        "width": 1080
+      }
+    ]
+  },
+  "real-gym-visitor.jpg": {
+    "file": "real-gym-visitor-640.webp",
+    "width": 640,
+    "height": 1138,
+    "variants": [
+      {
+        "file": "real-gym-visitor-480.webp",
+        "width": 480
+      },
+      {
+        "file": "real-gym-visitor-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "real-juice-bar.jpg": {
+    "file": "real-juice-bar-640.webp",
+    "width": 640,
+    "height": 1138,
+    "variants": [
+      {
+        "file": "real-juice-bar-480.webp",
+        "width": 480
+      },
+      {
+        "file": "real-juice-bar-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "real-press.jpg": {
+    "file": "real-press-720.webp",
+    "width": 720,
+    "height": 1280,
+    "variants": [
+      {
+        "file": "real-press-480.webp",
+        "width": 480
+      },
+      {
+        "file": "real-press-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "real-strength.jpg": {
+    "file": "real-strength-1080.webp",
+    "width": 1080,
+    "height": 1920,
+    "variants": [
+      {
+        "file": "real-strength-480.webp",
+        "width": 480
+      },
+      {
+        "file": "real-strength-800.webp",
+        "width": 800
+      },
+      {
+        "file": "real-strength-1080.webp",
+        "width": 1080
+      }
+    ]
+  },
+  "real-supplements.jpg": {
+    "file": "real-supplements-1350.webp",
+    "width": 1350,
+    "height": 1688,
+    "variants": [
+      {
+        "file": "real-supplements-480.webp",
+        "width": 480
+      },
+      {
+        "file": "real-supplements-800.webp",
+        "width": 800
+      },
+      {
+        "file": "real-supplements-1350.webp",
+        "width": 1350
+      }
+    ]
+  },
+  "social-adrian.jpg": {
+    "file": "social-adrian-540.webp",
+    "width": 540,
+    "height": 960,
+    "variants": [
+      {
+        "file": "social-adrian-480.webp",
+        "width": 480
+      },
+      {
+        "file": "social-adrian-540.webp",
+        "width": 540
+      }
+    ]
+  },
+  "social-community.jpg": {
+    "file": "social-community-360.webp",
+    "width": 360,
+    "height": 640,
+    "variants": [
+      {
+        "file": "social-community-360.webp",
+        "width": 360
+      }
+    ]
+  },
+  "social-conditioning.jpg": {
+    "file": "social-conditioning-361.webp",
+    "width": 361,
+    "height": 640,
+    "variants": [
+      {
+        "file": "social-conditioning-361.webp",
+        "width": 361
+      }
+    ]
+  },
+  "social-personal-training.jpg": {
+    "file": "social-personal-training-541.webp",
+    "width": 541,
+    "height": 960,
+    "variants": [
+      {
+        "file": "social-personal-training-480.webp",
+        "width": 480
+      },
+      {
+        "file": "social-personal-training-541.webp",
+        "width": 541
+      }
+    ]
+  },
+  "social-strength.jpg": {
+    "file": "social-strength-480.webp",
+    "width": 480,
+    "height": 640,
+    "variants": [
+      {
+        "file": "social-strength-480.webp",
+        "width": 480
+      }
+    ]
+  },
+  "social-supplement-bag.jpg": {
+    "file": "social-supplement-bag-360.webp",
+    "width": 360,
+    "height": 640,
+    "variants": [
+      {
+        "file": "social-supplement-bag-360.webp",
+        "width": 360
+      }
+    ]
+  },
+  "social-supplements.jpg": {
+    "file": "social-supplements-590.webp",
+    "width": 590,
+    "height": 590,
+    "variants": [
+      {
+        "file": "social-supplements-480.webp",
+        "width": 480
+      },
+      {
+        "file": "social-supplements-590.webp",
+        "width": 590
+      }
+    ]
+  }
+}
