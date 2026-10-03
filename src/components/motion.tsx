@@ -1,6 +1,7 @@
 import { motion, useInView, useReducedMotion, useScroll, useTransform, type MotionValue } from "motion/react";
 import { useRef, type ReactNode } from "react";
 import { Photo } from "./Photo";
+import { useSceneScroll } from "../useSceneScroll";
 
 export const EASE = [.76, 0, .24, 1] as const;
 export const EASE_OUT = [.16, 1, .3, 1] as const;
@@ -25,7 +26,7 @@ export function MaskText({ children, className = "", delay = 0 }: { children: Re
 export function ParallaxImage({ src, alt, className = "", amount = 7 }: { src: string; alt: string; className?: string; amount?: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const scrollYProgress = useSceneScroll(ref, "through");
   const y = useTransform(scrollYProgress, [0,1], [-amount, amount]);
   return <div ref={ref} className={"parallax-photo " + className}><motion.div style={reduced ? undefined : { y, scale: 1.06 }}><Photo src={src} alt={alt} /></motion.div></div>;
 }

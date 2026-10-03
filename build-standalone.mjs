@@ -130,7 +130,7 @@ const leafletCss = (await readFile(path.join(root, 'node_modules/leaflet/dist/le
   .replaceAll('url(images/', 'url(mvp_3/node_modules/leaflet/dist/images/');
 const libraries = await bundle({
   absWorkingDir: root,
-  stdin: { contents: 'export { default as Lenis } from "lenis"; export * as Leaflet from "leaflet"; export { getHoursState, formatHoursStatus } from "./src/openingHours.ts"; export { bindReviewsCarousel } from "./src/reviewsCarousel.ts";', resolveDir: root },
+  stdin: { contents: 'export { default as Lenis } from "lenis"; export * as Leaflet from "leaflet"; export { getHoursState, formatHoursStatus } from "./src/openingHours.ts"; export { bindReviewsCarousel } from "./src/reviewsCarousel.ts"; export { pinnedScrollRange, sceneScrollProgress } from "./src/scrollGeometry.ts";', resolveDir: root },
   bundle: true, write: false, minify: false, format: 'iife', globalName: 'SiteTools',
 });
 const client = await readFile(path.join(root, 'standalone-client.js'), 'utf8');

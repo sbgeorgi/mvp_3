@@ -1,4 +1,5 @@
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { motion, useReducedMotion, useTransform } from "motion/react";
+import { useSceneScroll } from "../useSceneScroll";
 import { useEffect, useRef, useState } from "react";
 import { useLang, waLink } from "../i18n";
 import { IMG, VIDEO } from "../media";
@@ -32,7 +33,7 @@ export function FeelIt() {
   const video = useRef<HTMLVideoElement>(null);
   const manualPause = useRef(false);
   const [playing, setPlaying] = useState(false);
-  const {scrollYProgress} = useScroll({target:scene,offset:["start start","end end"]});
+  const scrollYProgress = useSceneScroll(scene, "pinned", ".film-stage");
   const clip = useTransform(scrollYProgress,value=>{
     const remaining=1-Math.max(0,Math.min(1,value/.42));
     return `inset(${18*remaining}% ${18*remaining}% round ${24*remaining}px)`;

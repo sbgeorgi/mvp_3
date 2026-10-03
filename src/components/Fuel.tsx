@@ -1,4 +1,5 @@
-import { motion, useScroll, useTransform, type MotionValue } from "motion/react";
+import { motion, useTransform, type MotionValue } from "motion/react";
+import { useSceneScroll } from "../useSceneScroll";
 import { useRef } from "react";
 import { useLang, waLink } from "../i18n";
 import { IMG } from "../media";
@@ -20,7 +21,7 @@ function FuelCard({index,total,progress,title,description}:{index:number;total:n
 export default function Fuel() {
   const { t } = useLang();
   const stack = useRef<HTMLDivElement>(null);
-  const {scrollYProgress} = useScroll({target:stack,offset:["start start","end end"]});
+  const scrollYProgress = useSceneScroll(stack, "pinned", ".fuel-stack-stage");
   return <section id="fuel" className="premium-fuel light-section section-space" aria-labelledby="fuel-title">
     <div className="page-shell"><div className="section-heading"><div><SectionKicker light>{t.fuel.kicker}</SectionKicker><h2 id="fuel-title" className="section-title"><MaskText>{t.fuel.title}.</MaskText><MaskText delay={.12}><em>{t.fuel.title2}</em></MaskText></h2></div><div><p className="body-copy">{t.fuel.desc}</p><a href={waLink(t.wa.fuel)} target="_blank" rel="noreferrer" className="text-link">{t.fuel.cta}<Arrow /></a></div></div></div>
     <div ref={stack} className="fuel-stack page-shell">{t.fuel.cards.map((card,index)=><FuelCard key={card.t} index={index} total={t.fuel.cards.length} progress={scrollYProgress} title={card.t} description={card.d} />)}</div>

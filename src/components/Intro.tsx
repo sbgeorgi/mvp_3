@@ -1,4 +1,6 @@
-import { motion, useMotionValueEvent, useScroll, useTransform } from "motion/react";
+import { motion, useMotionValueEvent, useTransform } from "motion/react";
+import { useSceneScroll } from "../useSceneScroll";
+import { pinnedScrollRange } from "../scrollGeometry";
 import { useEffect, useRef, useState } from "react";
 import { useLang } from "../i18n";
 import { IMG } from "../media";
@@ -29,7 +31,7 @@ export function Club() {
   const track = useRef<HTMLDivElement>(null);
   const [distance, setDistance] = useState(0);
   const [index, setIndex] = useState(0);
-  const { scrollYProgress } = useScroll({ target:pin, offset:["start start","end end"] });
+  const scrollYProgress = useSceneScroll(pin, "pinned", ".club-sticky");
   const x = useTransform(scrollYProgress, value => -value*distance);
   const imageDepth = useTransform(scrollYProgress, [0, 1], [1.18, 1]);
   useMotionValueEvent(scrollYProgress,"change",value => setIndex(Math.round(value*(t.club.items.length-1))));
@@ -45,7 +47,7 @@ export function Club() {
     const element = pin.current;
     if (!element) return;
     const next = Math.max(0,Math.min(t.club.items.length-1,index+direction));
-    scrollToPosition(window.scrollY+element.getBoundingClientRect().top + (element.offsetHeight-window.innerHeight)*next/(t.club.items.length-1));
+    scrollToPosition(window.scrollY+element.getBoundingClientRect().top + pinnedScrollRange(element, ".club-sticky")*next/(t.club.items.length-1));
   };
   return (
     <section id="club" className="premium-club section-space" aria-labelledby="club-title">

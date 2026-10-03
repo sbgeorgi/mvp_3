@@ -1,4 +1,5 @@
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { motion, useReducedMotion, useTransform } from "motion/react";
+import { useSceneScroll } from "../useSceneScroll";
 import { useEffect, useRef, useState } from "react";
 import { MaskText } from "./motion";
 import { useLang, waLink } from "../i18n";
@@ -47,7 +48,7 @@ export default function Hero() {
     if (!node.getAttribute("src")) node.src = VIDEO.hero;
     try { await node.play(); } catch { /* Keep the poster and play control if autoplay is unavailable. */ }
   };
-  const { scrollYProgress } = useScroll({target:ref,offset:["start start","end start"]});
+  const scrollYProgress = useSceneScroll(ref, "exit");
   const imageY = useTransform(scrollYProgress,[0,1],[0,mobile ? 32 : 100]);
   const imageScale = useTransform(scrollYProgress,[0,1],[1,mobile ? 1 : 1.18]);
   const textY = useTransform(scrollYProgress,[0,1],[0,-64]);

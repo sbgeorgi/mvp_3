@@ -519,6 +519,10 @@ html.lenis,html.lenis body { height:auto; }
 .text-mask { display:block; overflow:hidden; padding-bottom:.1em; margin-bottom:-.1em; }
 .text-mask > span { display:block; }
 .hero-image-layer { position:absolute; inset:0; transform-origin:center; }
+/* Keep moving image layers composited when WebKit clips them during touch scroll. */
+@media (prefers-reduced-motion:no-preference) {
+  .hero-image-layer,.adrian-image-layer,.parallax-photo > div,.club-track { will-change:transform; }
+}
 .parallax-photo { position:relative; overflow:hidden; }
 .parallax-photo > div { position:absolute; inset:-8px 0; }
 .club-track { padding-inline:var(--page-gutter); max-width:1440px; margin-inline:auto; }
@@ -602,7 +606,8 @@ html.lenis,html.lenis body { height:auto; }
 @media (prefers-reduced-motion:reduce) {
   .club-track { transform:none !important; }
   .fuel-stack-card { transform:none !important; }
-  .hero-image-layer { transform:none !important; }
+  .hero-image-layer,.adrian-image-layer,.adrian-seal,.parallax-photo > div { transform:none !important; }
+  .hero-copy { transform:none !important; opacity:1 !important; }
 }
 
 .premium-pricing,.premium-final { overflow:hidden; }
@@ -744,7 +749,7 @@ html.lenis,html.lenis body { height:auto; }
 @keyframes contact-ring { to { transform:scale(1.5); opacity:0; } }
 @media (max-width:1199px) { .hero-film-caption { display:none; } .hero-fullscreen .hero-baseline { padding-right:var(--page-gutter); } .hero-week { margin-right:70px; font-size:8px; } }
 @media (max-width:899px) {
-  .hero-fullscreen { min-height:100svh; min-height:100dvh; }
+  .hero-fullscreen { min-height:100svh; }
   .hero-fullscreen > .hero-photo-shade { background:linear-gradient(90deg,#0a0a0a85,#0a0a0a20),linear-gradient(0deg,#0a0a0a 15%,transparent 65%); }
   .hero-fullscreen .hero-copy { width:min(100%,680px); padding-top:76px; padding-bottom:126px; }
   .hero-video-toggle { top:100px; font-size:9px; }
@@ -763,7 +768,7 @@ html.lenis,html.lenis body { height:auto; }
   .hero-fullscreen .hero-visual video { position:absolute; top:80px; left:0; width:100%; height:auto; aspect-ratio:16/9; object-fit:contain; object-position:center; mask-image:linear-gradient(to bottom,black 80%,transparent); }
 }
 @media (max-width:599px) {
-  .hero-fullscreen { min-height:100svh; min-height:100dvh; padding-top:74px; }
+  .hero-fullscreen { min-height:100svh; padding-top:74px; }
   .hero-fullscreen .hero-copy { padding-top:50px; padding-bottom:116px; justify-content:flex-start; }
   .hero-fullscreen .hero-visual video { top:74px; }
   .hero-fullscreen .hero-title { font-size:clamp(66px,16vw,90px); margin-top:24px; }
@@ -812,7 +817,7 @@ html.lenis,html.lenis body { height:auto; }
 }
 /* A single, clear mobile composition beneath the persistent brand header. */
 @media (max-width:599px) {
-  .hero-fullscreen { min-height:100svh; min-height:100dvh; }
+  .hero-fullscreen { min-height:100svh; }
   .hero-fullscreen .hero-visual video { aspect-ratio:4/3; object-fit:cover; }
   .hero-fullscreen .hero-copy { padding-top:0; padding-bottom:100px; justify-content:flex-end; }
   .hero-fullscreen .hero-location, .hero-fullscreen .hero-description, .hero-fullscreen .hero-actions .text-link { display:none; }

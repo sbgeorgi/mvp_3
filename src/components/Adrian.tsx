@@ -1,4 +1,5 @@
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { motion, useReducedMotion, useTransform } from "motion/react";
+import { useSceneScroll } from "../useSceneScroll";
 import { useRef } from "react";
 import { useLang, waLink } from "../i18n";
 import { IMG } from "../media";
@@ -10,7 +11,7 @@ export default function Adrian() {
   const { t, lang } = useLang();
   const ref = useRef<HTMLElement>(null);
   const reduced = useReducedMotion();
-  const {scrollYProgress} = useScroll({target:ref,offset:["start end","end start"]});
+  const scrollYProgress = useSceneScroll(ref, "through");
   const imageY = useTransform(scrollYProgress,[0,1],[-28,28]);
   const sealRotation = useTransform(scrollYProgress,[0,1],[-20,35]);
   return (
